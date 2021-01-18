@@ -10,6 +10,7 @@ echo("<p class='paragr'>Hello world, my name is " . $sFirstname . "</p>");
 
 
 // Een nieuwe regel code voor GitHub
+// Einde les 18-1-2021
 ?>
 <!DOCTYPE html>
 <html>
