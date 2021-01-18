@@ -7,8 +7,9 @@ echo("<p class='paragr'>Hello world, my name is " . $sFirstname . "</p>");
 
 
 // var_dump($_POST);
-// put your code here
 
+
+// Een nieuwe regel code voor GitHub
 ?>
 <!DOCTYPE html>
 <html>
