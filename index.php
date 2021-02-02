@@ -1,10 +1,38 @@
 <?php
-// Variables
-$sFirstname = $_POST['sFirstname'];
+if(!empty($_POST)){
+  // Variables
+  $sFirstname = $_POST['sFirstname'];
+  // Maincode
+  echo("<p class='paragr'>Hello world, my name is " . $sFirstname . "</p>");
+}else{
+  echo("U moet het formulier nog invullen.<br/>");
+}
 
-// Maincode
-echo("<p class='paragr'>Hello world, my name is " . $sFirstname . "</p>");
+echo(3*3*3*2);
 
+// date()
+
+// Generate the date of today
+$dDatefield = date('D-d-F-Y h:i:s', strtotime("-10days"));
+echo("De datum is: ".$dDatefield."<hr/>");
+
+// Conditions
+$iNumberOne = 15;
+$iNumberTwo = 23;
+$iNumberThree = 56;
+$bSuccess = false;
+
+// && EN
+// || OF
+
+        // TREU              OF   TRUE         = TRUE
+if($bSuccess||($iNumberTwo>$iNumberThree)){
+    // The condition is TRUE
+    echo("De data is opgeslagen in de database<hr/>");
+}else{
+    // The condition is FALSE
+    echo("ERROR! Data not saved<hr/>");
+}
 
 // var_dump($_POST);
 
