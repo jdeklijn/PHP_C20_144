@@ -24,7 +24,7 @@ if(!empty($_POST)){                                                             
   $sCity = $_POST['sCity'];                                                     // Create the variable for the city
   $sEmailAddress = $_POST['sEmailAddress'];                                     // Create the variable for the email address
   $sPassword = $_POST['sPassword'];                                             // Create the variable for the password
-  var_dump($_POST);
+  //var_dump($_POST);
 }
 
 // ==================== Show a registation form ===================
