@@ -29,6 +29,31 @@ var_dump($aName);
 echo("<hr/>");
 echo("Uw achternaam is: ".$aName['surname']);
 echo("<hr/>");
+$aDemoVariables = array("string",234523,54.13456,true);
+echo("<hr/>");
+echo("<hr/>");
+
+// An array with fruitstypes
+$aSoftFruits = array("Bosbessen","Frambozen","Bramen","Rode bessen");
+$aHardFruits = array("Appel","Peer","Mango","Granaatappel");
+$aCitrusFruits = array("Sinasappel","Manderijn","Citroen","Grapefruit");
+// An array filled with fruits
+$aFruits = array($aSoftFruits,$aHardFruits,$aCitrusFruits);
+var_dump($aFruits);
+echo("<hr/>");
+echo($aFruits[1][3]);
+echo("<hr/>");
+foreach($aFruits as $aFruitarray){
+    echo($aFruitarray[2]."<br/>");
+} // End foreach fruit
+echo("<hr/>");
+for($iCounter = 0;$iCounter<=2;$iCounter++){
+    for($iKeyCounter=0;$iKeyCounter<=3;$iKeyCounter++){
+        echo($aFruits[$iCounter][$iKeyCounter]."<br/>");
+    } // End for keycounter
+} // End for iCounter
+
+
 
 // ======================= File handling ==========================
 
