@@ -9,6 +9,68 @@
 // Version: v0.1
 //*************************************
 
+// ================ Array demonstration ========================
+
+// The variable array()
+
+// Keys values     0       1         2          3
+//$aNames = array("Hans","Grietje","Roodkapje","Reus");
+//var_dump($aNames);
+//echo("<hr/>");
+//echo($aNames[3]);
+//echo("<hr/>");
+//$aName = array();
+//$aName['firstname'] = "Frank";
+//$aName['insertion'] = "van der";
+//$aName['surname'] = "Boom";
+//$aName['street'] = "dorpstraat";
+//$aName['homenumber'] = 24;
+//var_dump($aName);
+//echo("<hr/>");
+//echo("Uw achternaam is: ".$aName['surname']);
+//echo("<hr/>");
+//$aDemoVariables = array("string",234523,54.13456,true);
+//echo("<hr/>");
+//echo("<hr/>");
+//
+//// An array with fruitstypes
+//$aSoftFruits = array("Bosbessen","Frambozen","Bramen","Rode bessen");
+//$aHardFruits = array("Appel","Peer","Mango","Granaatappel");
+//$aCitrusFruits = array("Sinasappel","Manderijn","Citroen","Grapefruit");
+//// An array filled with fruits
+//$aFruits = array($aSoftFruits,$aHardFruits,$aCitrusFruits);
+//var_dump($aFruits);
+//echo("<hr/>");
+//echo($aFruits[1][3]);
+//echo("<hr/>");
+//foreach($aFruits as $aFruitarray){
+//    echo($aFruitarray[2]."<br/>");
+//} // End foreach fruit
+//echo("<hr/>");
+//for($iCounter = 0;$iCounter<=2;$iCounter++){
+//    for($iKeyCounter=0;$iKeyCounter<=3;$iKeyCounter++){
+//        echo($aFruits[$iCounter][$iKeyCounter]."<br/>");
+//    } // End for keycounter
+//} // End for iCounter
+
+$aFord = array("Ford","Focus","Meriva","Fiesta","Mondeo","Mustang");
+$aOpel = array("Opel","Corsa","Astra","Karl","Insignia","Grandland");
+$aTesla = array("Tesla","Model S","Model X","Roadstar","Model 3","Model T");
+$aPeugeot = array("Peugeot","206","208","306","3008","508","308","608");
+$aSmart = array("Smart","ForTwo","ForFour");
+
+$aCarbase = array($aFord,$aOpel,$aTesla,$aPeugeot,$aSmart);
+
+echo("Mijn type auto is een: ".$aCarbase[2][3]." van het merk: ".$aCarbase[2][0]);
+
+foreach($aCarbase as $aModel){
+    $iTypeCount = count($aModel);
+    echo("<hr/>De typen van merk: ".$aModel[0]."<select name='".$aModel[0]."'>");
+    for($iModelCounter = 1;$iModelCounter<$iTypeCount;$iModelCounter++){        
+     echo("<option value='".$iModelCounter."'>$aModel[$iModelCounter]</option>");
+    }
+    echo("</select>");
+} // End foreach carbase
 
 // ======================= File handling ==========================
 
@@ -25,45 +87,8 @@ if(!empty($_POST)){                                                             
   $sCity                = $_POST['sCity'];                                      // Create the variable for the city
   $sEmailAddress        = $_POST['sEmailAddress'];                              // Create the variable for the email address
   $sPassword            = $_POST['sPassword'];                                  // Create the variable for the password
-  
-    // Open the file in 'read' modus
-    $file = fopen('registration.json','r');
-    // Read the JSON array from the file
-    $aJSONArray = file_get_contents('registration.json'); 
-    // Convert to JSON array back to a PHP array
-    $aRegistrationData = json_decode($aJSONArray,TRUE);
-    // Count the current number of records
-    $iRecordCounter = count($aRegistrationData);
-    
-    
-  $aRegistrationData[$iRecordCounter] = array();
-  $aRegistrationData[$iRecordCounter]['sFirstname']      = $sFirstname;
-  $aRegistrationData[$iRecordCounter]['sInsertion']      = $sInsertion;
-  $aRegistrationData[$iRecordCounter]['sSurname']        = $sSurname;
-  $aRegistrationData[$iRecordCounter]['sStreetname']     = $sStreetname;
-  $aRegistrationData[$iRecordCounter]['iHomeNumber']     = $iHomeNumber;
-  $aRegistrationData[$iRecordCounter]['sHomeNumberExtension'] = $sHomeNumberExtension;
-  $aRegistrationData[$iRecordCounter]['sPostalcode']     = $sPostalcode;
-  $aRegistrationData[$iRecordCounter]['sCity']           = $sCity;
-  $aRegistrationData[$iRecordCounter]['sEmailAddress']   = $sEmailAddress;
-  $aRegistrationData[$iRecordCounter]['sPassword']       = $sPassword;
-  var_dump($aRegistrationData);
-  
-  // Use JSON to encode the array into a storeable string
-  $aJSONArray = json_encode($aRegistrationData);
-  // Open the file in 'write' modus
-  $file = fopen('registration.json','w');  
-  // Save the content of the JSON array into the file
-  file_put_contents('registration.json', $aJSONArray);
-  // Close the file
-  fclose($file);                                              
-
-
-
-  
-
-  
-} // End if empty post
+  var_dump($_POST);
+}
 
 // ==================== Show a registation form ===================
 echo("
